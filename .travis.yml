@@ -5,7 +5,7 @@ install:
 - Rscript install.R
 
 script:
-- Rscript forecast.R
+- Rscript forecast_R_to_github.R
 
 deploy:
 prodiver: pages
