@@ -2,14 +2,16 @@ language: r
 cache: packages
 
 install:
-- Rscript install.R
-
+  - Rscript -e "print('skipping standard install')"
+  - Rscript install.R
+  
 script:
-- Rscript forecast_R_to_github.R
+  - Rscript forecast_R_to_github.R
+  
 
 deploy:
-prodiver: pages
-skip_cleanup: true
-github_token: $GITHUB_TOKEN
-keep_history: true
-target_branch: master
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  target_branch: master
